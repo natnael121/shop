@@ -94,8 +94,8 @@ export const WaiterManagement: React.FC = () => {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Waiter Management</h1>
-          <p className="text-gray-600">Assign tables to waiters and manage their notifications</p>
+          <h1 className="text-2xl font-bold text-gray-900">Staff Management</h1>
+          <p className="text-gray-600">Assign areas to staff and manage their notifications</p>
         </div>
         <button
           onClick={() => setShowAddWaiter(true)}
@@ -225,13 +225,13 @@ export const WaiterManagement: React.FC = () => {
         {waiters.length === 0 && (
           <div className="col-span-full text-center py-12">
             <Users className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No waiters assigned yet</h3>
-            <p className="text-gray-600 mb-4">Create waiter assignments to organize table service</p>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">No staff assigned yet</h3>
+            <p className="text-gray-600 mb-4">Create staff assignments to organize service areas</p>
             <button
               onClick={() => setShowAddWaiter(true)}
               className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
             >
-              Add Waiter
+              Add Staff Member
             </button>
           </div>
         )}

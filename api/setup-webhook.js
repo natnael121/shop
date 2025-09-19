@@ -1,7 +1,7 @@
 // Utility script to set up the Telegram webhook
 // This can be called manually or through an API endpoint
 
-const BOT_TOKEN = '1941939105:AAHJ9XhL9uRyzQ9uhi3F4rKAQIbQ9D7YRs8';
+const BOT_TOKEN = '7141155447:AAGU2K74kX3ICzSIPB566tly3LUDo423JrU';
 const WEBHOOK_URL = 'https://telegram-vercel-bot-three.vercel.app/api/telegram-webhook';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 

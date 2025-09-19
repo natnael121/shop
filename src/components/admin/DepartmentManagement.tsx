@@ -210,6 +210,11 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
   const [telegramChatId, setTelegramChatId] = useState(department?.telegramChatId || '');
   const [adminChatId, setAdminChatId] = useState(department?.adminChatId || '');
   const [role, setRole] = useState<'kitchen' | 'cashier' | 'admin'>(department?.role === 'bar' ? 'kitchen' : (department?.role || 'kitchen'));
+  const [role, setRole] = useState<'shop' | 'cashier' | 'delivery' | 'admin'>(
+    department?.role === 'kitchen' ? 'shop' : 
+    department?.role === 'bar' ? 'delivery' : 
+    (department?.role || 'shop')
+  );
   const [order, setOrder] = useState(department?.order || 0);
   const [icon, setIcon] = useState(department?.icon || '');
   const [saving, setSaving] = useState(false);
@@ -221,8 +226,9 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
 
   const getRoleIcon = (role: string) => {
     switch (role) {
-      case 'kitchen': return '👨‍🍳';
+      case 'shop': return '🏪';
       case 'cashier': return '💰';
+      case 'delivery': return '🚚';
       case 'admin': return '👨‍💼';
       default: return '🏢';
     }
@@ -230,8 +236,9 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
 
   const getRoleName = (role: string) => {
     switch (role) {
-      case 'kitchen': return 'Kitchen';
+      case 'shop': return 'Shop';
       case 'cashier': return 'Cashier';
+      case 'delivery': return 'Delivery';
       case 'admin': return 'Admin';
       default: return 'Department';
     }
@@ -341,7 +348,7 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
             <select
               value={role}
               onChange={(e) => {
-                const newRole = e.target.value as 'kitchen' | 'cashier' | 'admin';
+                const newRole = e.target.value as 'shop' | 'cashier' | 'delivery' | 'admin';
                 setRole(newRole);
                 setName(getRoleName(newRole));
                 setIcon(getRoleIcon(newRole));
@@ -349,13 +356,15 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               required
             >
-              <option value="kitchen">Kitchen</option>
+              <option value="shop">Shop</option>
               <option value="cashier">Cashier</option>
+              <option value="delivery">Delivery</option>
               <option value="admin">Admin</option>
             </select>
             <p className="text-xs text-gray-500 mt-1">
-              {role === 'kitchen' && 'Receives kitchen and bar orders and notifications'}
+              {role === 'shop' && 'Receives shop orders and inventory notifications'}
               {role === 'cashier' && 'Receives payment confirmations, order approvals, and waiter calls'}
+              {role === 'delivery' && 'Receives delivery orders and shipping notifications'}
               {role === 'admin' && 'Receives day reports and administrative notifications'}
             </p>
           </div>
@@ -370,7 +379,12 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
                   value={telegramChatId}
                   onChange={(e) => setTelegramChatId(e.target.value)}
                   className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  placeholder="e.g., -1002701066037"
+                  placeholder={
+                    role === 'cashier' ? 'e.g., -1003056784484' :
+                    role === 'delivery' ? 'e.g., -1003074405493' :
+                    role === 'admin' ? 'e.g., -1003039447644' :
+                    'e.g., -1003039447644'
+                  }
                   required
                 />
                 <button
@@ -382,9 +396,10 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
                 </button>
               </div>
               <p className="text-xs text-gray-500">
-                {role === 'cashier' && 'This chat will receive payment confirmations, order approvals, and waiter calls'}
+                {role === 'cashier' && 'This chat will receive payment confirmations, order approvals, and customer calls'}
+                {role === 'delivery' && 'This chat will receive delivery orders and shipping notifications'}
                 {role === 'admin' && 'This chat will receive day reports and administrative notifications'}
-                {role === 'kitchen' && 'This chat will receive kitchen and bar orders and notifications'}
+                {role === 'shop' && 'This chat will receive shop orders and inventory notifications'}
               </p>
             </div>
           </div>
@@ -401,7 +416,7 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
                     value={adminChatId}
                     onChange={(e) => setAdminChatId(e.target.value)}
                     className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    placeholder="e.g., -1002701066037"
+                    placeholder="e.g., -1003039447644"
                     required
                   />
                   <button

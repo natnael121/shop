@@ -1,36 +1,36 @@
-# Multi-User Restaurant Menu Platform
+# Multi-User Shop Management Platform
 
-A comprehensive, production-ready platform where restaurant owners can create and manage their own digital menus with advanced ordering capabilities, POS integration, delivery platform connectivity, and multi-department management.
+A comprehensive, production-ready platform where shop owners can create and manage their own digital catalogs with advanced ordering capabilities, POS integration, delivery platform connectivity, and multi-department management.
 
 ## 🚀 Features Overview
 
-### For Restaurant Owners (Admin Panel)
+### For Shop Owners (Admin Panel)
 - **Complete User Management**: Secure authentication with role-based access
-- **Advanced Menu Management**: Full CRUD operations with scheduling and availability control
-- **Multi-Department System**: Kitchen, Bar, Cashier, and Admin departments with dedicated workflows
+- **Advanced Product Management**: Full CRUD operations with scheduling and availability control
+- **Multi-Department System**: Shop, Delivery, Cashier, and Admin departments with dedicated workflows
 - **Real-time Order Management**: Live order tracking with status updates and notifications
 - **Comprehensive Analytics**: Revenue tracking, popular items analysis, and customer insights
 - **Automated Bill Generation**: Professional invoice creation with payment tracking
 - **Telegram Integration**: Real-time notifications with interactive approve/reject buttons
 - **Multi-table Support**: Handle unlimited tables with unique QR codes and URLs
-- **Waiter Management**: Assign waiters to specific tables with notification routing
+- **Staff Management**: Assign staff to specific areas with notification routing
 - **Delivery Platform Integration**: Connect with Uber Eats, DoorDash, Grubhub, and more
-- **Professional Print Menus**: Generate high-quality PDF menus for physical display
+- **Professional Print Catalogs**: Generate high-quality PDF catalogs for physical display
 - **QR Code Generation**: Bulk generate and download QR codes for all tables
-- **Super Admin Dashboard**: Platform-wide management for multi-restaurant operations
+- **Super Admin Dashboard**: Platform-wide management for multi-shop operations
 
 ### For Customers (Mobile-First Experience)
 - **Responsive Design**: Optimized for smartphones, tablets, and desktop
 - **Multi-language Support**: English and Amharic with easy language switching
 - **Telegram Integration**: Login with Telegram for personalized experience
-- **Smart Menu Scheduling**: Time-based menu availability (breakfast, lunch, dinner)
+- **Smart Product Scheduling**: Time-based product availability (morning, afternoon, evening)
 - **Order Management**: Dine-in or takeaway options with real-time cart management
 - **Payment Integration**: Upload payment screenshots with approval workflow
-- **Real-time Updates**: Live menu availability and pricing updates
-- **Waiter Call System**: One-tap waiter assistance with notification routing
+- **Real-time Updates**: Live product availability and pricing updates
+- **Staff Call System**: One-tap staff assistance with notification routing
 - **Bill Viewing**: Real-time table bill tracking and payment options
 - **Feedback System**: Rate and review orders with analytics integration
-- **About Us Integration**: View restaurant information, hours, and contact details
+- **About Us Integration**: View shop information, hours, and contact details
 
 ## 🛠 Tech Stack
 

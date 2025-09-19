@@ -258,7 +258,7 @@ export const MenuPage: React.FC = () => {
       if (userDoc) {
         setBotUsername(userDoc.settings?.telegramBotUsername || '');
         setBusinessInfo({ 
-          name: userDoc.businessName || 'Restaurant', 
+          name: userDoc.businessName || 'Shop', 
           logo: userDoc.logo,
           address: userDoc.aboutUs?.address || userDoc.address,
           phone: userDoc.aboutUs?.phone || userDoc.phone,
@@ -677,7 +677,7 @@ export const MenuPage: React.FC = () => {
         tableNumber={resolvedTableNumber || '1'} 
         language={settings.language}
         orderType={settings.orderType}
-        businessName={businessInfo?.name || 'Restaurant'}
+        businessName={businessInfo?.name || 'Shop'}
         businessLogo={businessInfo?.logo}
         customerInfo={session?.telegramUser ? {
           name: `${session.telegramUser.first_name} ${session.telegramUser.last_name || ''}`.trim(),

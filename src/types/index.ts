@@ -14,8 +14,8 @@ export interface User {
   telegramChatId?: string; // Backward compatibility
   telegramSettings?: {
     adminChatId?: string;
-    kitchenChatId?: string;
-    barChatId?: string;
+    deliveryChatId?: string;
+    cashierChatId?: string;
   };
   aboutUs?: {
     description?: string;
@@ -156,6 +156,7 @@ export interface Department {
   order: number;
   icon?: string;
   role: 'kitchen' | 'cashier' | 'admin';
+  role: 'shop' | 'cashier' | 'delivery' | 'admin';
   created_at: string;
 }
 

@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { Order, PendingOrder, OrderItem } from '../types';
 
-const BOT_TOKEN = '1941939105:AAHJ9XhL9uRyzQ9uhi3F4rKAQIbQ9D7YRs8'; // Replace with your actual bot token
+const BOT_TOKEN = '7141155447:AAGU2K74kX3ICzSIPB566tly3LUDo423JrU'; // Shop bot token
 // Default chat IDs (fallback)
-const DEFAULT_ADMIN_CHAT_ID = -1002701066037;
-const DEFAULT_KITCHEN_CHAT_ID = -1002660493020;
-const DEFAULT_BAR_CHAT_ID = -1002859150516;
+const DEFAULT_ADMIN_CHAT_ID = -1003039447644; // Shop group
+const DEFAULT_CASHIER_CHAT_ID = -1003056784484; // Cashier group
+const DEFAULT_DELIVERY_CHAT_ID = -1003074405493; // Delivery group
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 const WEBHOOK_URL = 'https://the-last-bot.vercel.app/api/telegram-webhook';
 
@@ -24,15 +24,15 @@ class TelegramService {
       
       return {
         adminChatId: adminDept?.telegramChatId || cashierDept?.adminChatId || user?.telegramSettings?.adminChatId || user?.telegramChatId || DEFAULT_ADMIN_CHAT_ID,
-        cashierChatId: cashierDept?.telegramChatId || DEFAULT_ADMIN_CHAT_ID,
-        kitchenChatId: kitchenDept?.telegramChatId || user?.telegramSettings?.kitchenChatId || DEFAULT_KITCHEN_CHAT_ID
+        cashierChatId: cashierDept?.telegramChatId || DEFAULT_CASHIER_CHAT_ID,
+        deliveryChatId: kitchenDept?.telegramChatId || user?.telegramSettings?.kitchenChatId || DEFAULT_DELIVERY_CHAT_ID
       };
     } catch (error) {
       console.error('Error getting user telegram settings:', error);
       return {
         adminChatId: DEFAULT_ADMIN_CHAT_ID,
-        cashierChatId: DEFAULT_ADMIN_CHAT_ID,
-        kitchenChatId: DEFAULT_KITCHEN_CHAT_ID
+        cashierChatId: DEFAULT_CASHIER_CHAT_ID,
+        deliveryChatId: DEFAULT_DELIVERY_CHAT_ID
       };
     }
   }

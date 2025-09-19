@@ -41,9 +41,9 @@ function App() {
         <Route path="/register" element={!user ? <RegisterForm /> : <Navigate to="/admin" replace />} />
         
         {/* Customer Menu Routes */}
-        <Route path="/menu/:userId/table/:tableNumber" element={<MenuPage />} />
+        <Route path="/shop/:userId/table/:tableNumber" element={<MenuPage />} />
         <Route path="/:businessSlug/table/:tableNumber" element={<MenuPage />} />
-        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/shop" element={<MenuPage />} />
         
         {/* Super Admin Routes */}
         <Route path="/super-admin/login" element={<SuperAdminLogin />} />

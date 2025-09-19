@@ -144,8 +144,8 @@ const ALLERGEN_OPTIONS = [
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Menu Management</h1>
-          <p className="text-gray-600">Manage your menu items and categories</p>
+          <h1 className="text-2xl font-bold text-gray-900">Product Management</h1>
+          <p className="text-gray-600">Manage your products and categories</p>
         </div>
         <div className="flex space-x-3">
           <button
@@ -176,7 +176,7 @@ const ALLERGEN_OPTIONS = [
       <div className="border-b border-gray-200">
         <nav className="-mb-px flex space-x-8">
           {[
-            { id: 'items', label: 'Menu Items', icon: Edit },
+            { id: 'items', label: 'Products', icon: Edit },
             { id: 'categories', label: 'Categories', icon: Plus },
             { id: 'schedules', label: 'Schedules', icon: Clock },
           ].map((tab) => (
@@ -241,7 +241,7 @@ const ALLERGEN_OPTIONS = [
       {/* Menu Items Section */}
       {activeTab === 'items' && (
         <div className="bg-white rounded-lg shadow-sm border p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Menu Items</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">Products</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {menuItems.map((item) => (
             <div key={item.id} className="border rounded-lg overflow-hidden">
@@ -330,7 +330,7 @@ const ALLERGEN_OPTIONS = [
       {/* Schedules Section */}
       {activeTab === 'schedules' && (
         <div className="bg-white rounded-lg shadow-sm border p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Menu Schedules</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Product Schedules</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {schedules.map((schedule) => (
               <div key={schedule.id} className="border rounded-lg p-4">

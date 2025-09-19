@@ -31,9 +31,9 @@ export const AdminLayout: React.FC = () => {
 
   const navItems = [
     { path: '/admin', icon: LayoutDashboard, label: 'Dashboard', exact: true },
-    { path: '/admin/menu', icon: Menu, label: 'Menu Management' },
+    { path: '/admin/menu', icon: Menu, label: 'Product Management' },
     { path: '/admin/departments', icon: Building2, label: 'Departments' },
-    { path: '/admin/waiters', icon: User, label: 'Waiters' },
+    { path: '/admin/waiters', icon: User, label: 'Staff' },
     { path: '/admin/orders', icon: ShoppingBag, label: 'Orders' },
     { path: '/admin/bills', icon: Receipt, label: 'Bills' },
     { path: '/admin/delivery', icon: Truck, label: 'Delivery Integration' },
@@ -80,7 +80,7 @@ export const AdminLayout: React.FC = () => {
             </div>
             <div>
               <h1 className="font-bold text-gray-900">Menu Platform</h1>
-              <p className="text-sm text-gray-600">{user?.businessName}</p>
+              <p className="text-sm text-gray-600">{user?.businessName || 'Shop Management'}</p>
             </div>
           </div>
           

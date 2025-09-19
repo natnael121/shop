@@ -1,7 +1,7 @@
 {
-  "name": "Restaurant Menu Platform",
-  "short_name": "Menu Platform",
-  "description": "Multi-user restaurant menu platform with ordering capabilities",
+  "name": "Shop Management Platform",
+  "short_name": "Shop Platform",
+  "description": "Multi-user shop management platform with ordering capabilities",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

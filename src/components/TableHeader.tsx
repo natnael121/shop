@@ -45,9 +45,9 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
             )}
           </div>
           <div>
-            <h1 className="text-xl font-bold text-white">{businessName}</h1>
+            <h1 className="text-xl font-bold text-white">{businessName || 'Shop'}</h1>
             <p className="text-gray-400 text-sm">
-              {customerInfo?.name ? `Welcome, ${customerInfo.name}!` : 'Welcome to our restaurant'}
+              {customerInfo?.name ? `Welcome, ${customerInfo.name}!` : 'Welcome to our shop'}
             </p>
           </div>
         </div>
