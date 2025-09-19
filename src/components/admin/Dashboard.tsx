@@ -275,12 +275,12 @@ export const Dashboard: React.FC = () => {
       if (status === 'approved') {
         const confirmation = paymentConfirmations.find(c => c.id === confirmationId);
         if (confirmation) {
-            await firebaseService.addWaiterCall(user.id, tableNumber.toString());
-            alert(`Staff call registered for Area ${tableNumber}`);
+          await firebaseService.markTableBillAsPaid(
+            confirmation.userId, 
             confirmation.tableNumber, 
             confirmationId,
-          console.error('Error registering staff call:', error);
-          alert('Failed to register staff call');
+            confirmation.cafeId
+          );
         }
       }
       
@@ -1129,82 +1129,4 @@ const CloseDayModal: React.FC<CloseDayModalProps> = ({
           </div>
         </div>
 
-        <div className="p-4 sm:p-6 space-y-6">
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-            <p className="text-yellow-800 text-sm">
-              <strong>Warning:</strong> This will close the current day and generate a report. 
-              All today's data will be archived and sent to admin.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Cashier Information</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Cashier Name *
-                </label>
-                <input
-                  type="text"
-                  value={cashierInfo.name}
-                  onChange={(e) => onCashierInfoChange({ ...cashierInfo, name: e.target.value })}
-                  className="w-full px-3 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                  placeholder="Enter cashier name"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Shift
-                </label>
-                <select
-                  value={cashierInfo.shift}
-                  onChange={(e) => onCashierInfoChange({ ...cashierInfo, shift: e.target.value })}
-                  className="w-full px-3 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                >
-                  <option value="morning">Morning Shift</option>
-                  <option value="afternoon">Afternoon Shift</option>
-                  <option value="evening">Evening Shift</option>
-                  <option value="night">Night Shift</option>
-                  <option value="full">Full Day</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Notes (Optional)
-                </label>
-                <textarea
-                  value={cashierInfo.notes}
-                  onChange={(e) => onCashierInfoChange({ ...cashierInfo, notes: e.target.value })}
-                  className="w-full px-3 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                  rows={3}
-                  placeholder="Any additional notes about the day..."
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4 pt-6 border-t">
-            <button
-              onClick={onClose}
-              className="w-full sm:w-auto px-6 py-3 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-medium"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={onConfirm}
-              disabled={loading || !cashierInfo.name.trim()}
-              className="w-full sm:w-auto px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors disabled:bg-gray-400 flex items-center justify-center space-x-2 font-medium"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>{loading ? 'Closing Day...' : 'Close Day'}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+        <div className="
