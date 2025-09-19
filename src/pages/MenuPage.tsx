@@ -146,7 +146,7 @@ export const MenuPage: React.FC = () => {
 
   useEffect(() => {
     // If this is a business slug route, resolve it to userId
-    if (!resolvedUserId && pathSegments.length === 3 && pathSegments[1] === 'table') {
+    if (!resolvedUserId && pathSegments.length === 3 && (pathSegments[1] === 'table' || pathSegments[1] === 'area')) {
       resolveBusinessSlug(pathSegments[0]);
     }
   }, [location.pathname]);

@@ -64,7 +64,7 @@ export const BillModal: React.FC<BillModalProps> = ({
         <div className="bg-white rounded-2xl p-6 max-w-sm w-full text-center shadow-xl">
           <Receipt className="w-12 h-12 mx-auto mb-4 text-gray-300" />
           <h2 className="text-xl font-bold text-gray-900 mb-3">No Outstanding Bill</h2>
-          <p className="text-gray-600 mb-5 text-sm">Table {tableNumber} has no current orders.</p>
+          <p className="text-gray-600 mb-5 text-sm">Area {tableNumber} has no current orders.</p>
           <button
             onClick={onClose}
             className="w-full bg-gray-600 text-white py-3 rounded-xl font-semibold hover:bg-gray-700 transition-colors"

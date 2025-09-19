@@ -93,7 +93,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
               <span>{t('aboutUs')}</span>
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              {businessInfo.description || 'Welcome to our shop! We offer quality products and excellent service.'}
+              {businessInfo.description || 'Welcome to our shop! We offer quality products and excellent customer service.'}
             </p>
           </div>
 
