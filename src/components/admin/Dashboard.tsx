@@ -695,7 +695,7 @@ export const Dashboard: React.FC = () => {
             {(() => {
               const bill = getTableBill(selectedTable);
               if (!bill) {
-                return <p className="text-gray-600">Table is currently empty</p>;
+                return <p className="text-gray-600">Area is currently empty</p>;
               }
               
               return (
