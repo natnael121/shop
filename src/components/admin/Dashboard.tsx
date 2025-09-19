@@ -275,12 +275,12 @@ export const Dashboard: React.FC = () => {
       if (status === 'approved') {
         const confirmation = paymentConfirmations.find(c => c.id === confirmationId);
         if (confirmation) {
-          await firebaseService.markTableBillAsPaid(
-            confirmation.userId, 
+            await firebaseService.addWaiterCall(user.id, tableNumber.toString());
+            alert(`Staff call registered for Area ${tableNumber}`);
             confirmation.tableNumber, 
             confirmationId,
-            confirmation.cafeId
-          );
+          console.error('Error registering staff call:', error);
+          alert('Failed to register staff call');
         }
       }
       
@@ -695,7 +695,7 @@ export const Dashboard: React.FC = () => {
             {(() => {
               const bill = getTableBill(selectedTable);
               if (!bill) {
-                return <p className="text-gray-600">Area is currently empty</p>;
+                return <p className="text-gray-600">Table is currently empty</p>;
               }
               
               return (

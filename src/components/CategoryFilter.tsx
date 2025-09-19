@@ -75,7 +75,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
           }`}
         >
           <span className="text-lg">🍽️</span>
-          <span>All Items</span>
+          <span>All Products</span>
         </button>
         
         {categories.map((category) => {

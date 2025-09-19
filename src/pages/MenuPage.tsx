@@ -734,7 +734,7 @@ export const MenuPage: React.FC = () => {
         {otherItems.length > 0 && (
           <div className="mb-8">
             <div className="mb-6">
-              <h2 className="text-white text-xl font-bold mb-2">Other Menu Items</h2>
+              <h2 className="text-white text-xl font-bold mb-2">Other Products</h2>
               <div className="flex items-center space-x-2 text-gray-400 text-sm">
                 <span>{otherItems.length} items with scheduled availability</span>
               </div>

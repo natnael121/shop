@@ -42,7 +42,7 @@ export const MenuDetail: React.FC<MenuDetailProps> = ({ item, onClose, onAddToCa
         {/* Image smaller */}
         <div className="relative h-32">
           <img
-            src={item.photo || 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg'}
+            src={item.photo || 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg'}
             alt={item.name}
             className="w-full h-full object-cover"
           />

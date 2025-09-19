@@ -62,7 +62,7 @@ export const translations = {
   am: {
     welcome: 'ወደ ሱቃችን እንኳን በደህና መጡ',
     table: 'ጠረጴዛ',
-    allItems: 'ሁሉም ምግቦች',
+    allItems: 'ሁሉም ምርቶች',
     home: 'ቤት',
     waiter: 'ሰራተኛ',
     staff: 'ሰራተኛ',
@@ -109,7 +109,7 @@ export const translations = {
     fastService: 'ፈጣን አገልግሎት',
     topRated: 'ከፍተኛ ደረጃ',
     specialMessage: 'እኛን ስለመረጡ እናመሰግናለን! የምግብ ተሞክሮዎ አስደሳች እንዲሆን ተስፋ እናደርጋለን።',
-    defaultDescription: 'ወደ ሱቃችን እንኳን በደህና መጡ! ጥራት ያላቸው ምርቶች እና ምርጥ አገልግሎት እናቀርባለን። ወዳጃዊ ሰራተኞቻችን የሚፈልጉትን እንዲያገኙ ለመርዳት እዚህ አሉ።',
+    defaultDescription: 'ወደ ሬስቶራንታችን እንኳን በደህና መጡ! በጥሩ ንጥረ ነገሮች የተሰራ ጣፋጭ እና ትኩስ ምግብ እናቀርባለን። ወዳጃዊ ሰራተኞቻችን የምግብ ተሞክሮዎን የማይረሳ ለማድረግ እዚህ አሉ።',
     notificationsEnabled: 'ማሳወቂያዎች በተሳካ ሁኔታ ተንቅተዋል!',
     orderConfirmed: 'ትዕዛዝ ተፀድቋል',
     orderPreparing: 'ትዕዛዝ እየተዘጋጀ ነው',

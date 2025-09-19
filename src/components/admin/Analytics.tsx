@@ -419,7 +419,7 @@ export const Analytics: React.FC = () => {
                         <span className="font-medium text-gray-900">
                           {feedback.customerInfo?.name || feedback.customerInfo?.telegramUsername || 'Anonymous'}
                         </span>
-                        <span className="text-sm text-gray-500">Table {feedback.tableNumber}</span>
+                        <span className="text-sm text-gray-500">Area {feedback.tableNumber}</span>
                       </div>
                       <div className="flex items-center space-x-1">
                         {[...Array(5)].map((_, i) => (

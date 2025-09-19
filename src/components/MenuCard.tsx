@@ -42,7 +42,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
             <img
               src={
                 item.photo ||
-                'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg'
+                'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg'
               }
               alt={item.name}
               className="w-full h-full object-cover"

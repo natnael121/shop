@@ -729,6 +729,7 @@ const EditRestaurantModal: React.FC<EditRestaurantModalProps> = ({ restaurant, o
             >
               <Save className="w-4 h-4" />
               <span>{loading ? 'Updating...' : 'Update Restaurant'}</span>
+              <span>{loading ? 'Updating...' : 'Update Shop'}</span>
             </button>
           </div>
         </form>
