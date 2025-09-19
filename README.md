@@ -1,22 +1,22 @@
 # Multi-User Shop Management Platform
 
-A comprehensive, production-ready platform where shop owners can create and manage their own digital catalogs with advanced ordering capabilities, POS integration, delivery platform connectivity, and multi-department management.
+A comprehensive, production-ready platform where shop owners can create and manage their own digital product catalogs with advanced ordering capabilities, inventory management, delivery platform connectivity, and multi-department workflow management.
 
 ## 🚀 Features Overview
 
 ### For Shop Owners (Admin Panel)
 - **Complete User Management**: Secure authentication with role-based access
-- **Advanced Product Management**: Full CRUD operations with scheduling and availability control
+- **Advanced Product Management**: Full CRUD operations with inventory tracking and availability control
 - **Multi-Department System**: Shop, Delivery, Cashier, and Admin departments with dedicated workflows
 - **Real-time Order Management**: Live order tracking with status updates and notifications
-- **Comprehensive Analytics**: Revenue tracking, popular items analysis, and customer insights
+- **Comprehensive Analytics**: Sales tracking, popular products analysis, and customer insights
 - **Automated Bill Generation**: Professional invoice creation with payment tracking
 - **Telegram Integration**: Real-time notifications with interactive approve/reject buttons
-- **Multi-table Support**: Handle unlimited tables with unique QR codes and URLs
+- **Multi-Area Support**: Handle unlimited service areas with unique QR codes and URLs
 - **Staff Management**: Assign staff to specific areas with notification routing
 - **Delivery Platform Integration**: Connect with Uber Eats, DoorDash, Grubhub, and more
-- **Professional Print Catalogs**: Generate high-quality PDF catalogs for physical display
-- **QR Code Generation**: Bulk generate and download QR codes for all tables
+- **Professional Print Catalogs**: Generate high-quality PDF product catalogs for physical display
+- **QR Code Generation**: Bulk generate and download QR codes for all service areas
 - **Super Admin Dashboard**: Platform-wide management for multi-shop operations
 
 ### For Customers (Mobile-First Experience)

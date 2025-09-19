@@ -67,7 +67,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
             <span>Connected</span>
           </div>
           <div className="text-white font-medium">
-            {t('table')} {tableNumber}
+            {t('area')} {tableNumber}
           </div>
         </div>
       </div>

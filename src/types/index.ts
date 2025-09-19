@@ -105,7 +105,7 @@ export interface MenuItem {
   orders: number;
   last_updated: string;
   userId?: string;
-  department?: 'kitchen';
+  department?: string;
   scheduleIds?: string[]; // Array of schedule IDs this item belongs to
   allergenIds?: string[]; // Array of allergen IDs for structured data
 }
@@ -155,7 +155,6 @@ export interface Department {
   adminChatId?: string; // For cashier department
   order: number;
   icon?: string;
-  role: 'kitchen' | 'cashier' | 'admin';
   role: 'shop' | 'cashier' | 'delivery' | 'admin';
   created_at: string;
 }

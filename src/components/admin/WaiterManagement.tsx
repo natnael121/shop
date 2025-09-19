@@ -95,7 +95,7 @@ export const WaiterManagement: React.FC = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Staff Management</h1>
-          <p className="text-gray-600">Assign areas to staff and manage their notifications</p>
+          <p className="text-gray-600">Assign service areas to staff and manage their notifications</p>
         </div>
         <button
           onClick={() => setShowAddWaiter(true)}
@@ -118,7 +118,7 @@ export const WaiterManagement: React.FC = () => {
                 <div>
                   <h3 className="font-semibold text-gray-900">{waiter.waiterName}</h3>
                   <p className="text-sm text-gray-500">
-                    Tables {waiter.startTable}-{waiter.endTable}
+                    Areas {waiter.startTable}-{waiter.endTable}
                   </p>
                 </div>
               </div>

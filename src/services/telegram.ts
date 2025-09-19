@@ -3,11 +3,11 @@ import { Order, PendingOrder, OrderItem } from '../types';
 
 const BOT_TOKEN = '7141155447:AAGU2K74kX3ICzSIPB566tly3LUDo423JrU'; // Shop bot token
 // Default chat IDs (fallback)
-const DEFAULT_ADMIN_CHAT_ID = -1003039447644; // Shop group
+const DEFAULT_ADMIN_CHAT_ID = -1003039447644; // Shop admin group
 const DEFAULT_CASHIER_CHAT_ID = -1003056784484; // Cashier group
 const DEFAULT_DELIVERY_CHAT_ID = -1003074405493; // Delivery group
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
-const WEBHOOK_URL = 'https://the-last-bot.vercel.app/api/telegram-webhook';
+const WEBHOOK_URL = 'https://your-shop-domain.vercel.app/api/telegram-webhook';
 
 class TelegramService {
   private async getUserTelegramSettings(userId: string) {
@@ -20,12 +20,12 @@ class TelegramService {
       
       const cashierDept = departments.find(d => d.role === 'cashier');
       const adminDept = departments.find(d => d.role === 'admin');
-      const kitchenDept = departments.find(d => d.role === 'kitchen');
+      const shopDept = departments.find(d => d.role === 'shop');
       
       return {
         adminChatId: adminDept?.telegramChatId || cashierDept?.adminChatId || user?.telegramSettings?.adminChatId || user?.telegramChatId || DEFAULT_ADMIN_CHAT_ID,
         cashierChatId: cashierDept?.telegramChatId || DEFAULT_CASHIER_CHAT_ID,
-        deliveryChatId: kitchenDept?.telegramChatId || user?.telegramSettings?.kitchenChatId || DEFAULT_DELIVERY_CHAT_ID
+        deliveryChatId: shopDept?.telegramChatId || user?.telegramSettings?.shopChatId || DEFAULT_DELIVERY_CHAT_ID
       };
     } catch (error) {
       console.error('Error getting user telegram settings:', error);
@@ -111,7 +111,7 @@ class TelegramService {
       .join('\n');
 
     const message = `
-🍽️ <b>New Order Pending Approval - Table ${pendingOrder.tableNumber}</b>
+🛒 <b>New Order Pending Approval - Area ${pendingOrder.tableNumber}</b>
 
 ${orderItems}
 
@@ -137,7 +137,7 @@ ${orderItems}
 
     const telegramSettings = await this.getUserTelegramSettings(order.userId);
     const chatId = department.telegramChatId;
-    const emoji = department.icon || '👨‍🍳';
+    const emoji = department.icon || '🏪';
     const departmentName = department.name;
 
     const orderItems = departmentItems
@@ -145,14 +145,14 @@ ${orderItems}
       .join('\n');
 
     const message = `
-${emoji} <b>${departmentName} Order - Table ${order.tableNumber}</b>
+${emoji} <b>${departmentName} Order - Area ${order.tableNumber}</b>
 
 ${orderItems}
 
 🕐 <b>Time:</b> ${new Date(order.timestamp).toLocaleString()}
 📋 <b>Order ID:</b> ${order.id.slice(0, 8)}
 
-<b>Status: APPROVED - Start Preparation</b>
+<b>Status: APPROVED - Start Processing</b>
     `.trim();
 
     const buttons = [

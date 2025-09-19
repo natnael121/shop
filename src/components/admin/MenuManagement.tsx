@@ -279,7 +279,7 @@ const ALLERGEN_OPTIONS = [
                     </span>
                     {item.department && (
                       <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                        {departments.find(d => d.id === item.department)?.name || item.department}
+                        {departments.find(d => d.id === item.department)?.name || 'Shop'}
                       </span>
                     )}
                     {item.scheduleIds && item.scheduleIds.length > 0 && (
@@ -575,7 +575,7 @@ const ItemModal: React.FC<ItemModalProps> = ({ item, categories, departments, sc
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Item Name *
+                Product Name *
               </label>
               <input
                 type="text"
@@ -652,7 +652,7 @@ const ItemModal: React.FC<ItemModalProps> = ({ item, categories, departments, sc
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Preparation Time (minutes)
+                Processing Time (minutes)
               </label>
               <input
                 type="number"
@@ -675,7 +675,7 @@ const ItemModal: React.FC<ItemModalProps> = ({ item, categories, departments, sc
                   className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                 />
                 <label htmlFor="available" className="ml-2 block text-sm text-gray-900">
-                  Available for ordering
+                  Available for purchase
                 </label>
               </div>
             </div>

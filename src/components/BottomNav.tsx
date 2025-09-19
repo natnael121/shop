@@ -58,7 +58,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           onClick={onWaiterCall}
           className="flex flex-col items-center py-2 px-3 rounded-lg text-gray-400 hover:text-yellow-400 hover:bg-yellow-400/10 transition-colors"
         >
-          <ChefHat className="w-6 h-6 mb-1" />
+          <User className="w-6 h-6 mb-1" />
           <span className="text-xs font-medium">{t('staff')}</span>
         </button>
 

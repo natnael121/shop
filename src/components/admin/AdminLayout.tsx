@@ -79,7 +79,7 @@ export const AdminLayout: React.FC = () => {
               <Menu className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-gray-900">Menu Platform</h1>
+              <h1 className="font-bold text-gray-900">Shop Platform</h1>
               <p className="text-sm text-gray-600">{user?.businessName || 'Shop Management'}</p>
             </div>
           </div>

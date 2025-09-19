@@ -1,7 +1,7 @@
 {
-  "name": "Shop Management Platform",
+  "name": "Multi-User Shop Platform",
   "short_name": "Shop Platform",
-  "description": "Multi-user shop management platform with ordering capabilities",
+  "description": "Multi-user shop management platform with product ordering and inventory management",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

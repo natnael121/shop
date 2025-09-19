@@ -210,11 +210,7 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
   const [telegramChatId, setTelegramChatId] = useState(department?.telegramChatId || '');
   const [adminChatId, setAdminChatId] = useState(department?.adminChatId || '');
   const [role, setRole] = useState<'kitchen' | 'cashier' | 'admin'>(department?.role === 'bar' ? 'kitchen' : (department?.role || 'kitchen'));
-  const [role, setRole] = useState<'shop' | 'cashier' | 'delivery' | 'admin'>(
-    department?.role === 'kitchen' ? 'shop' : 
-    department?.role === 'bar' ? 'delivery' : 
-    (department?.role || 'shop')
-  );
+  const [role, setRole] = useState<'shop' | 'cashier' | 'delivery' | 'admin'>(department?.role || 'shop');
   const [order, setOrder] = useState(department?.order || 0);
   const [icon, setIcon] = useState(department?.icon || '');
   const [saving, setSaving] = useState(false);
@@ -362,7 +358,7 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
               <option value="admin">Admin</option>
             </select>
             <p className="text-xs text-gray-500 mt-1">
-              {role === 'shop' && 'Receives shop orders and inventory notifications'}
+              {role === 'shop' && 'Receives product orders and inventory notifications'}
               {role === 'cashier' && 'Receives payment confirmations, order approvals, and waiter calls'}
               {role === 'delivery' && 'Receives delivery orders and shipping notifications'}
               {role === 'admin' && 'Receives day reports and administrative notifications'}
@@ -380,10 +376,10 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
                   onChange={(e) => setTelegramChatId(e.target.value)}
                   className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   placeholder={
-                    role === 'cashier' ? 'e.g., -1003056784484' :
-                    role === 'delivery' ? 'e.g., -1003074405493' :
-                    role === 'admin' ? 'e.g., -1003039447644' :
-                    'e.g., -1003039447644'
+                    role === 'cashier' ? '-1003056784484' :
+                    role === 'delivery' ? '-1003074405493' :
+                    role === 'admin' ? '-1003039447644' :
+                    role === 'shop' ? '-1003039447644' : 'e.g., -1003039447644'
                   }
                   required
                 />
@@ -396,10 +392,10 @@ const DepartmentModal: React.FC<DepartmentModalProps> = ({ department, userId, o
                 </button>
               </div>
               <p className="text-xs text-gray-500">
-                {role === 'cashier' && 'This chat will receive payment confirmations, order approvals, and customer calls'}
+                {role === 'cashier' && 'This chat will receive payment confirmations, order approvals, and customer service calls'}
                 {role === 'delivery' && 'This chat will receive delivery orders and shipping notifications'}
                 {role === 'admin' && 'This chat will receive day reports and administrative notifications'}
-                {role === 'shop' && 'This chat will receive shop orders and inventory notifications'}
+                {role === 'shop' && 'This chat will receive product orders and inventory notifications'}
               </p>
             </div>
           </div>
